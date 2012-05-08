@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Dropbox-js : JavaScript Library for the Dropbox API" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Dropbox-js</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/irachex/dropbox-js">View on GitHub</a>
+
+          <h1 id="project_title">Dropbox-js</h1>
+          <h2 id="project_tagline">JavaScript Library for the Dropbox API</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/irachex/dropbox-js/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/irachex/dropbox-js/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>API version: 1</p>
+
+<h2>How to Use</h2>
+
+<p>see <code>index.html</code> for example usage.</p>
+
+<h4>Step 1</h4>
+
+<p>include these library</p>
+
+<div class="highlight">
+<pre> <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery-1.7.2.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+ <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"oauth.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+ <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"sha1.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+ <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"dropbox.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre>
+</div>
+
+
+<p>setup your consumer key and consumer secret</p>
+
+<div class="highlight">
+<pre><span class="nx">dropbox</span><span class="p">.</span><span class="nx">setup</span><span class="p">(</span><span class="nx">API_KEY</span><span class="p">,</span> <span class="nx">API_SECRET</span><span class="p">);</span>
+</pre>
+</div>
+
+
+<h4>Step 2</h4>
+
+<p>OAuth is a three step process.</p>
+
+<p>a) Get a request token</p>
+
+<div class="highlight">
+<pre><span class="nx">dropbox</span><span class="p">.</span><span class="nx">requestToken</span><span class="p">();</span>
+</pre>
+</div>
+
+
+<p>b) User must visit the url to grant authorization to the client</p>
+
+<div class="highlight">
+<pre><span class="nx">dropbox</span><span class="p">.</span><span class="nx">authorizeUrl</span><span class="p">();</span>
+</pre>
+</div>
+
+
+<p>c) Generate our access token</p>
+
+<div class="highlight">
+<pre><span class="nx">dropbox</span><span class="p">.</span><span class="nx">accessToken</span><span class="p">();</span>
+</pre>
+</div>
+
+
+<h4>Step 3</h4>
+
+<p>Now we can access to the api functionality.</p>
+
+<div class="highlight">
+<pre><span class="nx">dropbox</span><span class="p">.</span><span class="nx">accountInfo</span><span class="p">(</span><span class="nx">callbackFunction</span><span class="p">);</span>
+</pre>
+</div>
+
+
+<h2>Methods</h2>
+
+<p>more detail in <a href="https://www.dropbox.com/developers/reference/api">https://www.dropbox.com/developers/reference/api</a></p>
+
+<h4>setup(apiKey, apiSecret, [accessType, locale])</h4>
+
+<p>accessType can be "dropbox" or "sandbox"</p>
+
+<h4>accountInfo([success, error])</h4>
+
+<h4>metadata(path, [success, error])</h4>
+
+<h4>put(path, body, [success, error])</h4>
+
+<h4>get(path, [success, error])</h4>
+
+<h4>getRev(path, rev, [success, error])</h4>
+
+<h4>search(path, query, [success, error])</h4>
+
+<h4>shares(path, [success, error])</h4>
+
+<h4>media(path, [success, error])</h4>
+
+<h4>delta(cursor, [success, error])</h4>
+
+<h4>revisions(path, [success, error])</h4>
+
+<h4>restore(path, rev, [success, error])</h4>
+
+<h4>copyRef(path, [success, error])</h4>
+
+<h4>thumbnails(path, format, size, [success, error])</h4>
+
+<h4>cp(root, fromPath, toPath, [success, error])</h4>
+
+<h4>mv(root, fromPath, toPath, [success, error])</h4>
+
+<h4>mkdir(path, [success, error])</h4>
+
+<h4>rm(path, [success, error])</h4>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Dropbox-js maintained by <a href="https://github.com/irachex">irachex</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
